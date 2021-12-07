@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { ImgA, ImgB, ImgC, ImgD } from './projectImages'
 
 const ProjectsWrapper = styled.div`
   width: 100%;
@@ -70,6 +71,7 @@ const ProjectsWrapper = styled.div`
       position: relative;
       width: calc((100% - 60px) / 4);
       padding-bottom: calc((100% - 60px) / 4 + 40px);
+      overflow: hidden;
 
       @media (max-width: 1025px) {
         width: calc((100% - 20px) / 2);
@@ -86,7 +88,11 @@ const ProjectsWrapper = styled.div`
       position: absolute;
       width: 100%;
       height: calc(100% - 60px);
-      background: var(--main);
+      transition: transform 1s;
+
+      &:hover {
+        transform: scale(1.5);
+      }
     }
     .project-description {
       position: absolute;
@@ -99,6 +105,7 @@ const ProjectsWrapper = styled.div`
       justify-content: center;
       font-size: 14px;
       font-weight: bold;
+      background: white;
     }
   }
 `
@@ -119,20 +126,20 @@ export const Projects = () => {
       </div>
       <div className='list'>
         <div className='card'>
-          <div className='project-image'>image</div>
-          <div className='project-description'>description</div>
+          <ImgA className='project-image' />
+          <div className='project-description'>Wave</div>
         </div>
         <div className='card'>
-          <div className='project-image'>image</div>
-          <div className='project-description'>description</div>
+          <ImgC className='project-image' />
+          <div className='project-description'>Blocks</div>
         </div>
         <div className='card'>
-          <div className='project-image'>image</div>
-          <div className='project-description'>description</div>
+          <ImgB className='project-image' />
+          <div className='project-description'>Triangle</div>
         </div>
         <div className='card'>
-          <div className='project-image'>image</div>
-          <div className='project-description'>description</div>
+          <ImgD className='project-image' />
+          <div className='project-description'>Cicles</div>
         </div>
       </div>
       <div className='button'><div>更多專案</div></div>

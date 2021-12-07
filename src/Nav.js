@@ -1,3 +1,4 @@
+import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
 const runningText = keyframes`
@@ -36,6 +37,9 @@ const NavWrapper = styled.div`
   .time {
     width: 170px;
     height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    word-spacing: 0px;
     @media (max-width: 1025px) {
       display: none;
     }
@@ -43,6 +47,12 @@ const NavWrapper = styled.div`
   .temp {
     width: 90px;
     height: 60px;
+    font-size: 30px;
+    font-weight: bold;
+    span {
+     font-weight: 600;
+     font-size: 24px;
+    }
     @media (max-width: 1025px) {
       display: none;
     }
@@ -83,12 +93,40 @@ const NavWrapper = styled.div`
   }
 `
 
+const getTimeString = (date) => {
+  const hours = date.getHours()
+  const minutes = date.getMinutes()
+  const seconds = date.getSeconds()
+  let str = ''
+  str += `${hours < 10 ? '0' : ''}${hours}`
+  str += ' : '
+  str += `${minutes < 10 ? '0' : ''}${minutes}`
+  str += ' : '
+  str += `${seconds < 10 ? '0' : ''}${seconds}`
+  return str
+}
+
 export const Nav = () => {
+  const [time, setTime] = React.useState(getTimeString(new Date()))
+
+  React.useEffect(
+    () => {
+      const intervalId = setInterval(
+        () => {
+          setTime(getTimeString(new Date()))
+        }, 1000
+      )
+      return () => {
+        clearInterval(intervalId)
+      }
+    }, []
+  )
+
   return (
     <NavWrapper>
       <div className='logo'>Logo</div>
-      <div className='time'>time</div>
-      <div className='temp'>temp</div>
+      <div className='time'>{time}</div>
+      <div className='temp'>17°<span>c</span></div>
       <div className='banner'>
         <span>Every element is a plate, present oneself but also extrude others to create a new possibility.</span>
       </div>
