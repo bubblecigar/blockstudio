@@ -7,6 +7,7 @@ const ContentWrapper = styled.div`
   width: 100%;
   height: 100%;
   overflow: auto;
+  overflow-y: hidden;
   transform: translateY(15px);
 
   padding-top: 34px;
@@ -18,7 +19,13 @@ const ContentWrapper = styled.div`
   > div {
     flex-shrink: 0;
     height: 100%;
+  }
 
+  @media (max-width: 1025px) {
+    flex-direction: column;
+    padding-left: 0px;
+    width: calc(100% + 15px);
+    overflow-y: auto;
   }
 `
 

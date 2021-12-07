@@ -2,14 +2,22 @@ import styled from 'styled-components'
 
 const IntroductionWrapper = styled.div`
   background: white;
-  width: 350px;
+  width: 351px;
   display: flex;
   flex-flow: column;
+
+  @media (max-width: 1025px) {
+    width: 100%;
+  }
 
   > div {
     border: 1px solid var(--main);
     margin-top: -1px;
-    margin-right: -1px;
+
+    @media (max-width: 1025px) {
+      border-left: 0px;
+      border-right: 0px;
+    }
   }
   > div:last-child {
     border-bottom: 0;
@@ -84,6 +92,58 @@ const IntroductionWrapper = styled.div`
   .carrer {
     flex-basis: 0;
     flex-grow: 1.5;
+    display: flex;
+    flex-flow: column;
+
+    .nav {
+      height: 30px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--main);
+      justify-content: space-between;
+      
+      > div {
+        flex-basis: 0;
+        flex-grow: 1;
+        display: flex;
+      }
+      .dot {
+        width: 12px;
+        height: 12px;
+        border: 1px solid var(--main);
+        border-radius: 10px;
+        margin-left: 8px;
+        position: relative;
+      }
+      .dot:first-child::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: var(--main);
+        width: 6px;
+        height: 6px;
+        border-radius: 10px;
+      }
+    }
+    .content {
+      flex-grow: 0.5;
+      h2, h3 {
+        font-size: 45px;
+        font-weight: bold;
+        word-spacing: 3px;
+        padding-left: var(--gap-m);
+        padding-top: var(--gap-s);
+      }
+      h3 {
+        font-size: 30px;
+      }
+    }
+    .ground {
+      flex-grow: 1.2;
+      background: var(--main);
+    }
   }
 `
 
@@ -102,7 +162,24 @@ export const Introduction = () => {
         <p>Since</p>
         <div className='year'>2015</div>
       </div>
-      <div className='carrer'>Career</div>
+      <div className='carrer'>
+        <div className='nav'>
+          <div>
+            <div className='dot' />
+            <div className='dot' />
+            <div className='dot' />
+          </div>
+          <div>- Career panel -</div>
+          <div></div>
+        </div>
+        <div className='content'>
+          <h2>CAREER</h2>
+          <h3>徵 人 頻 道</h3>
+        </div>
+        <div className='ground'>
+          ground
+        </div>
+      </div>
     </IntroductionWrapper >
   )
 }

@@ -5,6 +5,10 @@ const SideWrapper = styled.div`
   height: 100%;
   background: white;
 
+  @media (max-width: 1025px) {
+    display: none;
+  }
+
   flex-grow: 1;
   width: 40px;
   border-right: var(--main) 1px solid;

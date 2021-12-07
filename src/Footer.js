@@ -11,6 +11,11 @@ const FooterWrapper = styled.div`
   border-top: 1px solid var(--main);
   border-right: 1px solid var(--main);
 
+  @media (max-width: 1025px) {
+    width: 100%;
+    border-right: 0;
+  }
+
 
   > div {
     height: 40px;

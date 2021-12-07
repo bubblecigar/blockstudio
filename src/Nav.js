@@ -27,10 +27,16 @@ const NavWrapper = styled.div`
   .time {
     width: 170px;
     height: 50px;
+    @media (max-width: 1025px) {
+      display: none;
+    }
   }
   .temp {
     width: 90px;
     height: 60px;
+    @media (max-width: 1025px) {
+      display: none;
+    }
   }
   .banner {
     flex-grow: 1;
