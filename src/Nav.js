@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import { SlidingDiv } from './animationUtils'
+import { SlidingDiv, FloatingBlock } from './animationUtils'
 
 const runningText = keyframes`
   from {
@@ -34,6 +34,8 @@ const NavWrapper = styled.div`
   .logo {
     width: 60px;
     height: 60px;
+    font-weight: bold;
+    font-size: 20px;
   }
   .time {
     width: 170px;
@@ -126,7 +128,7 @@ export const Nav = () => {
 
   return (
     <NavWrapper>
-      <div className='logo'>Logo</div>
+      <FloatingBlock className='logo'>Bck</FloatingBlock>
       <div className='time'>{time}</div>
       <div className='temp'>17°<span>c</span></div>
       <div className='banner'>
