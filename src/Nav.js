@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
+import { SlidingDiv } from './animationUtils'
 
 const runningText = keyframes`
   from {
@@ -9,8 +10,8 @@ const runningText = keyframes`
     transform: translate(-100%);
   }
 `
-
 const NavWrapper = styled.div`
+  z-index: 3;
   display: flex;
   align-items: flex-start;
   position: absolute;
@@ -83,6 +84,7 @@ const NavWrapper = styled.div`
     height: 50px;
     font-size: 18px;
     font-weight: bold;
+    border-right: 1px solid white;
   }
   .hamberger {
     width: 50px;
@@ -130,8 +132,14 @@ export const Nav = () => {
       <div className='banner'>
         <span>Every element is a plate, present oneself but also extrude others to create a new possibility.</span>
       </div>
-      <div className='list'>作 品 列 表</div>
+      <SlidingDiv
+        className='list'
+        bgFrom={'white'}
+        textFrom={'var(--main)'}
+        bgTo={'var(--main)'}
+        textTo={'white'}
+      >作 品 列 表</SlidingDiv>
       <div className='hamberger'>=</div>
-    </NavWrapper>
+    </NavWrapper >
   )
 }

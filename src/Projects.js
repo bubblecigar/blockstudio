@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { ImgA, ImgB, ImgC, ImgD } from './projectImages'
+import { SlidingDiv } from './animationUtils'
 
 const ProjectsWrapper = styled.div`
   width: 100%;
@@ -9,21 +10,10 @@ const ProjectsWrapper = styled.div`
   align-items: center;
   flex-wrap: wrap;
 
-  .button {
+  .buttonWrap {
     align-self: flex-end;
     margin-left: auto;
     margin-right: var(--gap);
-    > div {
-      width: 185px;
-      height: 37px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--main);
-      color: white;
-      font-size: 15px;
-      font-weight: bold;
-    }
 
     order: 2;
     @media (max-width: 1025px) {
@@ -32,6 +22,16 @@ const ProjectsWrapper = styled.div`
       padding-top: 50px;
       padding-bottom: 80px;
     }
+  }
+  .button {
+    width: 185px;
+    height: 37px;
+    display: flex;
+    border: 1px solid var(--main);
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bold;
   }
   .intro {
     display: flex;
@@ -142,7 +142,16 @@ export const Projects = () => {
           <div className='project-description'>Cicles</div>
         </div>
       </div>
-      <div className='button'><div>更多專案</div></div>
+      <div className='buttonWrap'>
+        <SlidingDiv
+          className='button'
+          bgFrom={'var(--main)'}
+          bgTo={'white'}
+          textFrom={'white'}
+          textTo={'var(--main)'}
+          skew={'-15deg'}
+        >更多專案</SlidingDiv>
+      </div>
     </ProjectsWrapper>
   )
 }
