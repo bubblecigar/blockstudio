@@ -187,9 +187,7 @@ export const Introduction = () => {
           <h2>CAREER</h2>
           <h3>徵 人 頻 道</h3>
         </div>
-        <div className='ground'>
-
-        </div>
+        <div className='ground'></div>
       </div>
     </IntroductionWrapper >
   )
