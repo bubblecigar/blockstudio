@@ -8,6 +8,16 @@ const endlessRoad = keyframes`
     transform: translate(0px);
   }
 `
+const emittingCrown = keyframes`
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+`
 
 const HeroImageStyle = styled.div`
   width: calc(100% - 350px);
@@ -23,6 +33,21 @@ const HeroImageStyle = styled.div`
     height: 50%;
   }
   .sky {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+  h1 {
+    color: var(--contrast);
+    font-size: 30px;
+    font-weight: bold;
+  }
+  p {
+    color: var(--contrast);
+    text-align: center;
+    line-height: 20px;
+    padding-top: 10px;
   }
   .ground {
     display: flex;
@@ -83,30 +108,36 @@ const HeroImageStyle = styled.div`
     transform: translate(-50%) rotateX(90deg);
   }
   .sun {
-    width: 200px;
-    height: 200px;
+    width: 20px;
+    height: 20px;
+    margin: 60px;
 
-    @media (max-width: 700px) {
-      width: 150px;
-      height: 150px;
-      transform: translate(-50%, -20%);
+    ::after {
+      content: '';
+      width: 80px;
+      height: 80px;
+      background-color: var(--contrast);
+      opacity: 0.3;
+      border-radius: 50%;
+      position: absolute;
     }
 
     border-radius: 100px;
-    background: var(--main);
-    position: absolute;
+    background: var(--contrast);
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     font-size: 36px;
-    bottom:0;
-    left: 50%;
-    transform: translate(-50%, 20%);
-    transition: transform cubic-bezier(.7,0,.3,1) .4s;
 
-    &:hover {
-      transform: translate(-50%, -50%);
+    .crown {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+
+      border-radius: 100px;
+      background: var(--contrast);
+      animation: ${emittingCrown} 2s cubic-bezier(.7,0,.3,1) infinite;
     }
   }
 `
@@ -116,12 +147,18 @@ const lines = new Array(5).fill(0)
 export const HeroImage = () => {
   return (
     <HeroImageStyle>
-      <div className='sky'></div>
+      <div className='sky'>
+        <div className='sun'>
+          <div className='crown'></div>
+        </div>
+        <h1 className='orange'>Block Studio</h1>
+        <p className='orange'>
+          3F, No. 1L Qiangang StaticRange., Shilin Dist.,<br className='orange' />
+          Taipei City 111, Taiwan
+        </p>
+      </div>
       <div className='ground'>
         <div className='horizontal-line'>
-        </div>
-        <div className='sun'>
-          Hi, 你好
         </div>
         <div className='left'>
           {

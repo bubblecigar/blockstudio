@@ -3,6 +3,7 @@
   --gap-m: 15px;
   --gap-s: 10px;
   --main: #40587c;
+  --contrast: #ec9669;
   --font-size: 13px;
 }
 * {
@@ -13,9 +14,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Roboto', sans-serif;
 }
 
 ::selection {
   background: #40587c;
   color: white;
+}
+
+.orange::selection {
+  background-color: var(--contrast);
 }
