@@ -36,7 +36,7 @@ const HeroImageStyle = styled.div`
   .sky {
     display: flex;
     flex-flow: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
   }
   h1 {
