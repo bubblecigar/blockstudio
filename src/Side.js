@@ -4,6 +4,7 @@ const SideWrapper = styled.div`
   position: absolute;
   height: 100%;
   background: white;
+  left: 0;
 
   @media (max-width: 1025px) {
     display: none;

@@ -10,6 +10,7 @@ export const SlidingDiv = styled.div`
     height: 100%;
     width: 120%;
     top: 0;
+    left: -10px;
     transition: transform .4s cubic-bezier(.7,0,.3,1);
     transform: translate(-100%) ${props => props.skew ? `skewX(${props.skew})` : ''};
     position: absolute;
@@ -24,6 +25,7 @@ export const SlidingDiv = styled.div`
     transform: translate(0%)  ${props => props.skew ? `skewX(${props.skew})` : ''};
     position: absolute;
     top: 0;
+    left: -10px;
     z-index: -1;
   }
   &:hover {
