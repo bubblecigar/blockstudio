@@ -71,6 +71,8 @@ const NavWrapper = styled.div`
       height: 25px;
     }
     span {
+      display: block;
+      width: 100%;
       animation: ${runningText} 15s linear infinite;
       @media (max-width: 700px) {
         display: none;

@@ -9,6 +9,8 @@ const ProjectsWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  background: white;
+  z-index: 50;
 
   .buttonWrap {
     align-self: flex-end;

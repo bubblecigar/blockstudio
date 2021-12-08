@@ -82,3 +82,56 @@ export const FloatingBlock = styled.div`
     transition: width .4s cubic-bezier(.7,0,.3,1);
   }
 `
+
+export const FloatingBlock2 = styled.div`
+  @media (max-width: 1025px) {
+    transform: none;
+    ::after, ::before {
+      display: none;
+    }
+  }
+
+  position: relative;
+  background: ${props => props.blockColor || 'white'};
+  transition: transform .4s cubic-bezier(.7,0,.3,1);
+  ${props => props.init === 'pop' ? `transform: translate(-${17 * props.factor}px, ${11 * props.factor}px);` : ''}
+  z-index: 1;
+  &:hover {
+    ${props => props.init === 'pop' ? 'transform: translate(0, 0);' : `transform: translate(-${17 * props.factor}px, ${11 * props.factor}px);`}
+    @media (max-width: 1025px) {
+      transform: none;
+    }
+  }
+  ::before {
+    z-index: -1;
+    content: '';
+    left: ${props => props.left || -1}px;
+    background: ${props => props.blockColor || 'white'};
+    border-left: 1px solid var(--main);
+    border-right: 1px solid var(--main);
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 100%;
+    transform-origin: 0 100%;
+    transform: skew(-60deg);
+    transition: height .4s cubic-bezier(.7,0,.3,1);
+  }
+  ::after {
+    top: ${props => props.top || -1}px;
+    z-index: -1;
+    content: '';
+    background: ${props => props.blockColor || 'white'};
+    border-left: 1px solid var(--main);
+    border-top: 1px solid var(--main);
+    border-bottom: 1px solid var(--main);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 100%;
+    transform-origin: 0 50%;
+    transform: skewY(-30deg);
+    transition: width .4s cubic-bezier(.7,0,.3,1);
+  }
+`

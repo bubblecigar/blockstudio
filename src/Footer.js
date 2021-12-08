@@ -18,7 +18,7 @@ const FooterWrapper = styled.div`
 
 
   > div {
-    height: 40px;
+    height: 41px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,7 +26,7 @@ const FooterWrapper = styled.div`
   }
 
   .fb {
-    width: 40px;
+    width: 41px;
     background: var(--main);
     color: white;
     font-size: 16px;

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { FloatingBlock2 } from './animationUtils'
 
 const IntroductionWrapper = styled.div`
   background: white;
@@ -6,12 +7,25 @@ const IntroductionWrapper = styled.div`
   display: flex;
   flex-flow: column;
 
+  ::after {
+    content: '';
+    height: 100%;
+    width: 0;
+    border-right: 1px solid var(--main);
+    position: absolute;
+    right: -2px;
+    z-index: 60;
+  }
+
   @media (max-width: 1025px) {
     width: 100%;
+    ::after {
+      display: none;
+    }
   }
 
   > div {
-    border: 1px solid var(--main);
+    outline: 1px solid var(--main);
     margin-top: -1px;
 
     @media (max-width: 1025px) {
@@ -32,13 +46,12 @@ const IntroductionWrapper = styled.div`
     justify-content: space-between;
     position: relative;
 
-    transform-origin: 100% 0;
-    transform: scale(1.1);
+    // transform-origin: 100% 0;
+    // transform: scale(1.1);
     background: white;
-    z-index: 2;
-    @media (max-width: 1025px) {
-      transform: scale(1);
-    }
+    // @media (max-width: 1025px) {
+    //   // transform: scale(1);
+    // }
 
     > * {
       padding: var(--gap-m);
@@ -73,23 +86,27 @@ const IntroductionWrapper = styled.div`
       font-weight: bold;
       font-size: 18px;
     }
+    z-index: 15;
   }
   .since {
+    z-index: 10;
+    background: white;
     flex-basis: 0;
     flex-grow: 0.5;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: var(--gap-m);
     position: relative;
 
     p {
       font-size: 20px;
       font-weight: bold;
+      padding: var(--gap-m);
     }
     .year {
       font-size: 40px;
       font-weight: bold;
+      padding: var(--gap-m);
       color: white;
       text-shadow:
       -1px -1px 0 var(--main),  
@@ -161,19 +178,19 @@ const IntroductionWrapper = styled.div`
 export const Introduction = () => {
   return (
     <IntroductionWrapper>
-      <div className='ask'>
+      <FloatingBlock2 className='ask' init={'pop'} factor={2} top={-1}>
         <div>
           <h2>FORM</h2>
           <h3>專 案 詢 問</h3>
         </div>
         <p>請透過表單詢問案件<br />我們會以Email回覆或是直接與您電話聯絡</p>
         <div className='button'>></div>
-      </div>
-      <div className='since'>
+      </FloatingBlock2>
+      <FloatingBlock2 className='since' factor={3}>
         <p>Since</p>
         <div className='year'>2015</div>
-      </div>
-      <div className='carrer'>
+      </FloatingBlock2>
+      <FloatingBlock2 className='carrer' init={'pop'} factor={1}>
         <div className='nav'>
           <div>
             <div className='dot' />
@@ -188,7 +205,7 @@ export const Introduction = () => {
           <h3>徵 人 頻 道</h3>
         </div>
         <div className='ground'></div>
-      </div>
+      </FloatingBlock2>
     </IntroductionWrapper >
   )
 }

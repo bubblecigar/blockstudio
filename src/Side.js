@@ -11,7 +11,7 @@ const SideWrapper = styled.div`
   }
 
   flex-grow: 1;
-  width: 40px;
+  width: 41px;
   border-right: var(--main) 1px solid;
   writing-mode: vertical-rl;
   text-orientation: mixed;
