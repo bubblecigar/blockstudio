@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Enter } from './animationUtils'
 
 const FooterWrapper = styled.div`
   position: absolute;

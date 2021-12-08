@@ -1,3 +1,4 @@
+import React from 'react'
 import styled, { keyframes } from 'styled-components'
 export const SlidingDiv = styled.div`
   overflow: hidden;
@@ -135,3 +136,49 @@ export const FloatingBlock2 = styled.div`
     transition: width .4s cubic-bezier(.7,0,.3,1);
   }
 `
+
+const EnterAnim = styled.div`
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: var(--main);
+  z-index: 100;
+  position: absolute;
+  transition: all 2s cubic-bezier(.7,0,.3,1);
+  transform: translate(${props => props.slide ? 200 : -100}%);
+
+  ::before, ::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+  }
+  ::before {
+    background: white;
+    transform: translate(-100%);
+    background: linear-gradient(60deg, transparent 50%,  var(--main) 50%);
+  }
+  ::after {
+    background: white;
+    transform: translate(100%);
+  }
+`
+export const Enter = ({ children, ...props }) => {
+  const [slide, setSlide] = React.useState(false)
+  React.useEffect(
+    () => setTimeout(() => setSlide(true), 200)
+  )
+  return (
+    <div {...props}
+      style={{
+        position: 'relative',
+        overflow: 'hidden'
+      }}
+    >
+      {children}
+      <EnterAnim slide={slide} />
+    </div>
+  )
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import { SlidingDiv, FloatingBlock } from './animationUtils'
+import { SlidingDiv, FloatingBlock, Enter } from './animationUtils'
 
 const runningText = keyframes`
   from {
@@ -137,11 +137,11 @@ export const Nav = () => {
   return (
     <NavWrapper>
       <FloatingBlock className='logo'>Bck</FloatingBlock>
-      <div className='time'>{time}</div>
-      <div className='temp'>17°<span>c</span></div>
-      <div className='banner'>
+      <Enter className='time'>{time}</Enter>
+      <Enter className='temp'>17°<span>c</span></Enter>
+      <Enter className='banner'>
         <span>Every element is a plate, present oneself but also extrude others to create a new possibility.</span>
-      </div>
+      </Enter>
       <SlidingDiv
         className='list'
         bgFrom={'white'}
@@ -149,7 +149,7 @@ export const Nav = () => {
         bgTo={'var(--main)'}
         textTo={'white'}
       >作 品 列 表</SlidingDiv>
-      <div className='hamberger'>=</div>
+      <Enter className='hamberger'>=</Enter>
     </NavWrapper >
   )
 }

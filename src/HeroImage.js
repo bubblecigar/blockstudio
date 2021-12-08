@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components'
+import { Enter } from './animationUtils'
 
 const endlessRoad = keyframes`
   from {
@@ -147,7 +148,7 @@ const lines = new Array(5).fill(0)
 export const HeroImage = () => {
   return (
     <HeroImageStyle>
-      <div className='sky'>
+      <Enter className='sky'>
         <div className='sun'>
           <div className='crown'></div>
         </div>
@@ -156,8 +157,8 @@ export const HeroImage = () => {
           3F, No. 1L Qiangang StaticRange., Shilin Dist.,<br className='orange' />
           Taipei City 111, Taiwan
         </p>
-      </div>
-      <div className='ground'>
+      </Enter>
+      <Enter className='ground'>
         <div className='horizontal-line'>
         </div>
         <div className='left'>
@@ -170,7 +171,7 @@ export const HeroImage = () => {
             lines.map((line, i) => <div key={i} />)
           }
         </div>
-      </div>
+      </Enter>
     </HeroImageStyle>
   )
 }

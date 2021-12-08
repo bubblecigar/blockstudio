@@ -4,7 +4,7 @@ import { Nav } from './Nav.js'
 import { Side } from './Side.js'
 import { Footer } from './Footer.js'
 import { Content } from './Content.js'
-
+import { Enter } from './animationUtils'
 
 const Window = styled.div`
   position: relative;
@@ -22,14 +22,14 @@ const Window = styled.div`
 
 function App() {
   return (
-    <>
+    <Enter>
       <Window>
         <Content />
         <Side />
         <Nav />
         <Footer />
       </Window>
-    </>
+    </Enter>
   );
 }
 
