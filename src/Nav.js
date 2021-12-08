@@ -36,6 +36,7 @@ const NavWrapper = styled.div`
     height: 60px;
     font-weight: bold;
     font-size: 20px;
+    z-index: 4;
   }
   .time {
     width: 170px;
