@@ -26,6 +26,15 @@ const ContentWrapper = styled.div`
     padding-left: 0px;
     width: calc(100% + 15px);
     overflow-y: auto;
+
+    .intro {
+      height: 500px;
+    }
+  }
+  @media (max-width: 700px) {
+    .intro {
+      height: auto;
+    }
   }
 `
 

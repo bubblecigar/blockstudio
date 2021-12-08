@@ -18,19 +18,29 @@ const IntroductionWrapper = styled.div`
   }
 
   @media (max-width: 1025px) {
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--main);
     width: 100%;
+    justify-content: space-between;
+    height: 500px;
     ::after {
       display: none;
     }
+  }
+  @media (max-width: 700px) {
+    flex-flow: column nowrap;
   }
 
   > div {
     outline: 1px solid var(--main);
     margin-top: -1px;
+    flex-basis: 0;
+    flex-grow: 1;
 
     @media (max-width: 1025px) {
       border-left: 0px;
       border-right: 0px;
+      flex-basis: 100%;
     }
   }
   > div:last-child {
@@ -38,20 +48,13 @@ const IntroductionWrapper = styled.div`
   }
 
   .ask {
-    flex-basis: 0;
+    order: 2;
     flex-grow: 1;
     max-height: 170px;
     display: flex;
     flex-flow: column;
     justify-content: space-between;
     position: relative;
-
-    // transform-origin: 100% 0;
-    // transform: scale(1.1);
-    background: white;
-    // @media (max-width: 1025px) {
-    //   // transform: scale(1);
-    // }
 
     > * {
       padding: var(--gap-m);
@@ -89,9 +92,9 @@ const IntroductionWrapper = styled.div`
     z-index: 15;
   }
   .since {
+    order: 3;
     z-index: 10;
     background: white;
-    flex-basis: 0;
     flex-grow: 0.5;
     display: flex;
     justify-content: space-between;
@@ -114,13 +117,36 @@ const IntroductionWrapper = styled.div`
         -1px 1px 0 var(--main),
         1px 1px 0 var(--main);
     }
+
+    @media (max-width: 1025px) {
+      order: 1;
+      flex-flow: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+    }
+    @media (max-width: 700px) {
+      display: none;
+    }
   }
   .carrer {
-    flex-basis: 0;
+    order: 4;
     flex-grow: 1.5;
     max-height: 300px;
     display: flex;
     flex-flow: column;
+
+    @media (max-width: 1025px) {
+      transform: scale(1.1);
+      transform-origin: 100% 100%;
+      z-index: 20;
+    }
+    @media (max-width: 700px) {
+      transform: scale(1);
+      .ground {
+        height: 300px;
+        margin-top: 30px;
+      }
+    }
 
     .nav {
       height: 30px;
@@ -157,14 +183,14 @@ const IntroductionWrapper = styled.div`
     .content {
       flex-grow: 0.5;
       h2, h3 {
-        font-size: 45px;
+        font-size: 36px;
         font-weight: bold;
         word-spacing: 3px;
         padding-left: var(--gap-m);
-        padding-top: var(--gap-s);
+        padding-top: var(--gap-m);
       }
       h3 {
-        font-size: 30px;
+        font-size: 24px;
       }
     }
     .ground {
@@ -177,7 +203,7 @@ const IntroductionWrapper = styled.div`
 
 export const Introduction = () => {
   return (
-    <IntroductionWrapper>
+    <IntroductionWrapper className='intro' >
       <FloatingBlock2 className='ask' init={'pop'} factor={2} top={-1}>
         <div>
           <h2>FORM</h2>

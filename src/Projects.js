@@ -35,7 +35,7 @@ const ProjectsWrapper = styled.div`
     font-size: 15px;
     font-weight: bold;
   }
-  .intro {
+  .project-intro {
     display: flex;
     align-items: center;
     align-self: flex-end;
@@ -115,7 +115,7 @@ const ProjectsWrapper = styled.div`
 export const Projects = () => {
   return (
     <ProjectsWrapper>
-      <div className='intro'>
+      <div className='project-intro'>
         <div className='title'>
           <h2>Projects</h2>
           <h3>近 期 專 案</h3>
