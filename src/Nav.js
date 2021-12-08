@@ -67,8 +67,14 @@ const NavWrapper = styled.div`
     font-size: 18px;
     white-space: nowrap;
     overflow: hidden;
+    @media (max-width: 700px) {
+      height: 25px;
+    }
     span {
       animation: ${runningText} 15s linear infinite;
+      @media (max-width: 700px) {
+        display: none;
+      }
     }
     span::before {
       content: '';
@@ -78,7 +84,7 @@ const NavWrapper = styled.div`
       top: 50%;
       transform: translate(-150%, -50%);
       background: var(--main);
-    } 
+    }
   }
   .list {
     white-space: nowrap;

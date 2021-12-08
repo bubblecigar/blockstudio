@@ -32,6 +32,14 @@ const IntroductionWrapper = styled.div`
     justify-content: space-between;
     position: relative;
 
+    transform-origin: 100% 0;
+    transform: scale(1.1);
+    background: white;
+    z-index: 2;
+    @media (max-width: 1025px) {
+      transform: scale(1);
+    }
+
     > * {
       padding: var(--gap-m);
     }
