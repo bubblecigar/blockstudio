@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/blockstudio/static/css/main.3da9382c.chunk.css",
-    "main.js": "/blockstudio/static/js/main.76c8bf28.chunk.js",
-    "main.js.map": "/blockstudio/static/js/main.76c8bf28.chunk.js.map",
+    "main.js": "/blockstudio/static/js/main.ef63e747.chunk.js",
+    "main.js.map": "/blockstudio/static/js/main.ef63e747.chunk.js.map",
     "runtime-main.js": "/blockstudio/static/js/runtime-main.3770c01b.js",
     "runtime-main.js.map": "/blockstudio/static/js/runtime-main.3770c01b.js.map",
     "static/js/2.97a00098.chunk.js": "/blockstudio/static/js/2.97a00098.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.3770c01b.js",
     "static/js/2.97a00098.chunk.js",
     "static/css/main.3da9382c.chunk.css",
-    "static/js/main.76c8bf28.chunk.js"
+    "static/js/main.ef63e747.chunk.js"
   ]
 }
