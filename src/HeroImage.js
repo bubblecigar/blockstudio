@@ -115,6 +115,10 @@ const HeroImageStyle = styled.div`
     height: 20px;
     margin: 60px;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     ::after {
       content: '';
       width: 80px;
