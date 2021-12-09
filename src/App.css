@@ -1,13 +1,6 @@
-:root {
-  --gap: 20px;
-  --gap-m: 15px;
-  --gap-s: 10px;
-  --main: #40587c;
-  --contrast: #ec9669;
-  --font-size: 13px;
-}
 * {
   box-sizing: border-box;
+  transition: background-color .4s linear;
 }
 #root {
   min-height: 100vh;
@@ -18,7 +11,7 @@
 }
 
 ::selection {
-  background: #40587c;
+  background: var(--main);
   color: white;
 }
 

@@ -1,5 +1,7 @@
+import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { Enter } from './animationUtils'
+import { ThemeContext } from './ThemeContext'
 
 const endlessRoad = keyframes`
   from {
@@ -146,10 +148,12 @@ const HeroImageStyle = styled.div`
 const lines = new Array(5).fill(0)
 
 export const HeroImage = () => {
+  const [theme, setTheme] = React.useContext(ThemeContext)
+  const onClick = e => setTheme({ mode: theme.mode === 'dark' ? 'light' : 'dark' })
   return (
     <HeroImageStyle>
       <Enter className='sky'>
-        <div className='sun'>
+        <div className='sun' onClick={onClick}>
           <div className='crown'></div>
         </div>
         <h1 className='orange'>Block Studio</h1>
